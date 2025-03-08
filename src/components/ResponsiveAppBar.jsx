@@ -51,7 +51,7 @@ function ResponsiveAppBar() {
       <Container maxWidth='xl'>
         <Toolbar disableGutters>
           <img
-            src='/public/logo.png' // 로고 이미지 경로를 여기에 입력하세요
+            src='/logo.png' // 로고 이미지 경로를 여기에 입력하세요
             alt='Logo'
             style={{ display: isMobile ? 'none' : 'flex', marginRight: '8px', height: '40px' }}
           />
@@ -118,7 +118,7 @@ function ResponsiveAppBar() {
             </Box>
           )}
           <img
-            src='/public/logo.png' // 로고 이미지 경로를 여기에 입력하세요
+            src='/logo.png' // 로고 이미지 경로를 여기에 입력하세요
             alt='Logo'
             style={{ display: isMobile ? 'flex' : 'none', marginRight: '8px', height: '40px' }}
           />
