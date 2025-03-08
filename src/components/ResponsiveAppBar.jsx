@@ -12,11 +12,10 @@ import Avatar from '@mui/material/Avatar'
 import Button from '@mui/material/Button'
 import Tooltip from '@mui/material/Tooltip'
 import MenuItem from '@mui/material/MenuItem'
-import AdbIcon from '@mui/icons-material/Adb'
 import { useMediaQuery, useTheme } from '@mui/material'
 
-const pages = ['Products', 'Pricing', 'Blog']
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout']
+const pages = []
+const settings = []
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null)
@@ -51,7 +50,11 @@ function ResponsiveAppBar() {
     >
       <Container maxWidth='xl'>
         <Toolbar disableGutters>
-          <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          <img
+            src='/public/logo.png' // 로고 이미지 경로를 여기에 입력하세요
+            alt='Logo'
+            style={{ display: isMobile ? 'none' : 'flex', marginRight: '8px', height: '40px' }}
+          />
           <Typography
             variant='h6'
             noWrap
@@ -67,7 +70,7 @@ function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            LOGO
+            Momentum
           </Typography>
 
           {/* 임시로 모바일 화면에서 햄버거 버튼과 프로필 아이콘을 숨깁니다 */}
@@ -114,7 +117,11 @@ function ResponsiveAppBar() {
               </Menu>
             </Box>
           )}
-          <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          <img
+            src='/public/logo.png' // 로고 이미지 경로를 여기에 입력하세요
+            alt='Logo'
+            style={{ display: isMobile ? 'flex' : 'none', marginRight: '8px', height: '40px' }}
+          />
           <Typography
             variant='h5'
             noWrap
@@ -132,7 +139,7 @@ function ResponsiveAppBar() {
               textAlign: 'center', // 중앙 정렬
             }}
           >
-            LOGO
+            Momentum
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
@@ -152,7 +159,7 @@ function ResponsiveAppBar() {
             <Box sx={{ flexGrow: 0 }}>
               <Tooltip title='Open settings'>
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                  <Avatar alt='Remy Sharp' src='/static/images/avatar/2.jpg' />
+                  <Avatar alt='Profile' src='/static/images/avatar/2.jpg' />
                 </IconButton>
               </Tooltip>
               <Menu
