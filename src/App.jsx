@@ -1,7 +1,7 @@
 import './styles/App.css'
 import AppRouter from '@/router'
 import { Provider } from 'react-redux'
-import ThemeManager from './components/ThemeManager'
+import ThemeManager from './layouts/ThemeManager'
 
 function App() {
   return (

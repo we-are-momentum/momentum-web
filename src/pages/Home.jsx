@@ -1,6 +1,6 @@
-import ResponsiveLayout from '@/components/ResponsiveLayout'
-import Header from '@/components/Header'
-import Footer from '@/components/Footer'
+import ResponsiveLayout from '@/layouts/ResponsiveLayout'
+import Header from '@/layouts/Header'
+import Footer from '@/layouts/Footer'
 import ResponsiveAppBar from '@/components/ResponsiveAppBar'
 
 const MobileView = () => (
