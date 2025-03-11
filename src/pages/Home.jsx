@@ -1,7 +1,6 @@
-import ResponsiveLayout from '@/layouts/ResponsiveLayout'
-import Header from '@/layouts/Header'
-import Footer from '@/layouts/Footer'
 import ResponsiveAppBar from '@/components/ResponsiveAppBar'
+import Footer from '@/layouts/Footer'
+import ResponsiveLayout from '@/layouts/ResponsiveLayout'
 
 const MobileView = () => (
   <div className='flex flex-col min-h-screen bg-gray-50'>
@@ -11,7 +10,6 @@ const MobileView = () => (
         <p>모바일 환경에 맞춰 디자인되었습니다.</p>
       </section>
     </main>
-    <Footer />
   </div>
 )
 
@@ -23,7 +21,6 @@ const DesktopView = () => (
         <p>데스크탑 환경에 맞춰 디자인되었습니다.</p>
       </section>
     </main>
-    <Footer />
   </div>
 )
 
@@ -34,6 +31,7 @@ const Home = () => (
     <div className='pt-[64px]'>
       <ResponsiveLayout mobileComponent={<MobileView />} desktopComponent={<DesktopView />} />
     </div>
+    <Footer />
   </div>
 )
 

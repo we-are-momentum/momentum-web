@@ -70,7 +70,7 @@ function ResponsiveAppBar() {
               textDecoration: 'none',
             }}
           >
-            Momentum
+            momentum
           </Typography>
 
           {/* 임시로 모바일 화면에서 햄버거 버튼과 프로필 아이콘을 숨깁니다 */}
@@ -139,7 +139,7 @@ function ResponsiveAppBar() {
               textAlign: 'center', // 중앙 정렬
             }}
           >
-            Momentum
+            momentum
           </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
