@@ -9,10 +9,26 @@ const ResponsiveLayout = ({ mobileComponent, desktopComponent }) => {
 
   return (
     <Box
-      sx={{ display: 'flex', flexDirection: 'column', minHeight: '100vh', alignItems: 'center' }}
+      sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        minHeight: '100vh',
+        alignItems: 'center',
+        width: '100%',
+        maxWidth: '1280px', // 데스크탑 환경에서 최대 너비 설정
+        mx: 'auto', // 중앙 정렬
+        px: isMobile ? 2 : 4, // 패딩 설정
+      }}
     >
       <ResponsiveAppBar />
-      <Box component='main' sx={{ flexGrow: 1, pt: '64px' }}>
+      <Box
+        component='main'
+        sx={{
+          flexGrow: 1,
+          pt: '64px',
+          width: '100%',
+        }}
+      >
         {isMobile ? mobileComponent : desktopComponent}
       </Box>
       <Footer />

@@ -1,6 +1,6 @@
 import React from 'react'
 import PerformanceList from '../components/PerformanceList'
-import { Container, Typography } from '@mui/material'
+import { Container, Typography, Box } from '@mui/material'
 
 const Performance = () => {
   // 공연 카드 클릭 시 실행될 핸들러 함수
@@ -10,11 +10,13 @@ const Performance = () => {
   }
 
   return (
-    <Container sx={{ mt: 4 }}>
+    <Container sx={{ mt: 4, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <Typography variant='h4' gutterBottom>
         공연 리스트
       </Typography>
-      <PerformanceList onCardClick={handleCardClick} />
+      <Box width='100%' display='flex' justifyContent='center'>
+        <PerformanceList onCardClick={handleCardClick} />
+      </Box>
     </Container>
   )
 }

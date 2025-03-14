@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card, CardContent, CardMedia, Typography, Grid2, Button } from '@mui/material'
+import { Card, CardContent, CardMedia, Typography, Grid, Button } from '@mui/material'
 
 const performances = [
   {
@@ -13,10 +13,18 @@ const performances = [
 
 const PerformanceList = ({ onCardClick }) => {
   return (
-    <Grid2 container spacing={3} justifyContent='center'>
+    <Grid container spacing={3} justifyContent='center' alignItems='center'>
       {performances.map((performance) => (
-        <Grid2 key={performance.id} size={{ xs: 12, sm: 6, md: 4 }}>
-          <Card sx={{ maxWidth: 345 }} onClick={() => onCardClick(performance.id)}>
+        <Grid
+          item
+          key={performance.id}
+          xs={12}
+          sm={6}
+          md={4}
+          display='flex'
+          justifyContent='center'
+        >
+          <Card sx={{ width: '100%', maxWidth: 345, textAlign: 'center' }}>
             <CardMedia
               component='img'
               height='200'
@@ -28,11 +36,20 @@ const PerformanceList = ({ onCardClick }) => {
               <Typography variant='body2' color='text.secondary'>
                 {performance.date} | {performance.location}
               </Typography>
+              <Button
+                variant='contained'
+                color='primary'
+                fullWidth
+                sx={{ mt: 2 }}
+                onClick={() => onCardClick(performance.id)}
+              >
+                상세 보기
+              </Button>
             </CardContent>
           </Card>
-        </Grid2>
+        </Grid>
       ))}
-    </Grid2>
+    </Grid>
   )
 }
 
