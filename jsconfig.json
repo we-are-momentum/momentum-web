@@ -9,6 +9,13 @@
     },
     "types": ["vite/client"]
   },
-  "include": ["src/**/*.d.ts", "src/**/*.js", "src/**/*.jsx", "src/**/*.ts", "src/**/*.tsx"],
+  "include": [
+    "src/**/*.d.ts",
+    "src/**/*.js",
+    "src/**/*.jsx",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/components/PerformancePoster.ㅅsx"
+  ],
   "exclude": ["node_modules", "**/node_modules", "dist"]
 }
