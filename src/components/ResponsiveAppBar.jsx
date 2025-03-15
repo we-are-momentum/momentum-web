@@ -60,7 +60,7 @@ function ResponsiveAppBar() {
               style={{ marginRight: '8px', height: '70px' }}
             />
           </Link>
-          {!isMobile && (
+          {/* {!isMobile && (
             <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
               <IconButton
                 size='large'
@@ -102,7 +102,7 @@ function ResponsiveAppBar() {
                 ))}
               </Menu>
             </Box>
-          )}
+          )} */}
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
@@ -116,8 +116,7 @@ function ResponsiveAppBar() {
               </Button>
             ))}
           </Box>
-          {/* 임시로 모바일 화면에서 햄버거 버튼과 프로필 아이콘을 숨깁니다 */}
-          {!isMobile && (
+          {/* {!isMobile && (
             <Box sx={{ flexGrow: 0 }}>
               <Tooltip title='Open settings'>
                 <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
@@ -147,7 +146,7 @@ function ResponsiveAppBar() {
                 ))}
               </Menu>
             </Box>
-          )}
+          )} */}
         </Toolbar>
       </Container>
     </AppBar>

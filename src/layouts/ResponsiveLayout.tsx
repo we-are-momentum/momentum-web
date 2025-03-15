@@ -18,8 +18,8 @@ const performancesData = [
     date: '2025-04-19 ~ 2025-04-20',
     location: '구로 예술나무 씨어터',
     image: `${basename}/logo_dark.png`,
-    supportInfo: '카카오뱅크 01-1234-12456 / 예금주: 이*태',
-    accountNumber: '카카오뱅크 01-1234-12456',
+    supportInfo: '79420983227 카카오뱅크 / 예금주: 이*태',
+    accountNumber: '79420983227 카카오뱅크',
     synopsis: '시놉시스 내용이 여기에 들어갑니다...',
     schedule: [
       {
