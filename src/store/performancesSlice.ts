@@ -6,6 +6,7 @@ interface Group {
 
 interface Schedule {
   round: string
+  dateTime: string
   groups: Group[]
 }
 

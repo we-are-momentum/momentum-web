@@ -1,7 +1,8 @@
 import React, { useState } from 'react'
-import { Card, CardContent, CardMedia, Snackbar, Button } from '@mui/material'
+import { Card, CardContent, CardMedia, Snackbar, Box, Typography } from '@mui/material'
 import MuiAlert from '@mui/material/Alert'
 import Slide from '@mui/material/Slide'
+import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 
 const PerformancePoster = ({ title, company, supportInfo, image, accountNumber }) => {
   const [open, setOpen] = useState(false)
@@ -38,10 +39,17 @@ const PerformancePoster = ({ title, company, supportInfo, image, accountNumber }
         <CardContent className='text-center'>
           <h1 className='text-2xl font-bold'>{title}</h1>
           <p className='text-gray-600'>{company}</p>
-          <p className='text-gray-600'>{supportInfo}</p>
-          <Button variant='contained' color='primary' className='mt-2' onClick={handleCopyClick}>
-            후원금 계좌 복사
-          </Button>
+          <Box display='flex' alignItems='left' justifyContent='left'>
+            <Box
+              display='flex'
+              alignItems='center'
+              className='text-gray-600'
+              onClick={handleCopyClick}
+            >
+              <Typography sx={{ textDecoration: 'underline' }}>{supportInfo}</Typography>
+              <ContentCopyIcon className='ml-3' />
+            </Box>
+          </Box>
         </CardContent>
       </Card>
       <Snackbar

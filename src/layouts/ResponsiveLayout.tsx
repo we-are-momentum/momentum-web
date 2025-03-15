@@ -24,6 +24,32 @@ const performancesData = [
     schedule: [
       {
         round: '1회차',
+        dateTime: '2025/04/19 19:00',
+        groups: [{ members: ['홍길동', '김길동', '김아영'] }],
+      },
+      {
+        round: '2회차',
+        dateTime: '',
+        groups: [{ members: ['홍길동', '김길동'] }],
+      },
+      {
+        round: '3회차',
+        dateTime: '',
+        groups: [{ members: ['홍길동', '김길동'] }],
+      },
+      {
+        round: '4회차',
+        dateTime: '',
+        groups: [{ members: ['홍길동', '김길동'] }],
+      },
+      {
+        round: '5회차',
+        dateTime: '',
+        groups: [{ members: ['홍길동', '김길동'] }],
+      },
+      {
+        round: '6회차',
+        dateTime: '',
         groups: [{ members: ['홍길동', '김길동'] }],
       },
     ],

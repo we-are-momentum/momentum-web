@@ -15,18 +15,18 @@ const PerformanceSchedule = ({ schedule }) => {
       <h2 className='text-xl font-bold'>Casting Schedule</h2>
       <TableContainer component={Paper} className='mt-2'>
         <Table>
-          {/* <TableHead>
-            <TableRow>
-            
-            </TableRow>
-          </TableHead> */}
           <TableBody>
             {schedule.map((row) => (
               <TableRow key={row.round}>
                 <TableCell>{row.round}</TableCell>
-                <TableCell>{row.groups.members}</TableCell>
-                {/* <TableCell>{row.cast.b}</TableCell>
-                <TableCell>{row.cast.c}</TableCell> */}
+                <TableCell>{row.dateTime}</TableCell>
+                {row.groups.map((group, index) => (
+                  <React.Fragment key={index}>
+                    {group.members.map((member, idx) => (
+                      <TableCell key={idx}>{member}</TableCell>
+                    ))}
+                  </React.Fragment>
+                ))}
               </TableRow>
             ))}
           </TableBody>

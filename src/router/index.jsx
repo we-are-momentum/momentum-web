@@ -8,18 +8,16 @@ import Performance from '../pages/PerformanceList'
 function AppRouter() {
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('md'))
+  const basename = '/momentum-web'
 
   return (
-    <Router
-      basename='/momentum-web'
-      future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
-    >
+    <Router basename={basename}>
       <Routes>
         <Route
           path='/'
           element={
             isMobile ? (
-              <Navigate to='/performances' />
+              <Navigate to={'/performances'} />
             ) : (
               <ResponsiveLayout mobileComponent={<Home />} desktopComponent={<Home />} />
             )
