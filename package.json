@@ -7,6 +7,7 @@
     "npm": ">= 10.7.0 < 11.0.0",
     "node": ">=18.20.4 < 20.0.0"
   },
+  "homepage": "https://we-are-momentum.github.io/momentum-web",
   "scripts": {
     "clean": "rm -rf node_modules package-lock.json dist",
     "dev": "vite",
@@ -15,7 +16,9 @@
     "build": "vite build",
     "lint": "eslint .",
     "format": "prettier --write ./src",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@emotion/react": "^11.14.0",
@@ -25,6 +28,7 @@
     "@mui/material": "^6.4.7",
     "@reduxjs/toolkit": "^2.6.0",
     "env-cmd": "^10.1.0",
+    "gh-pages": "^6.3.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-redux": "^9.2.0",
