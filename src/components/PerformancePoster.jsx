@@ -4,7 +4,15 @@ import MuiAlert from '@mui/material/Alert'
 import Slide from '@mui/material/Slide'
 import ContentCopyIcon from '@mui/icons-material/ContentCopy'
 
-const PerformancePoster = ({ title, company, supportInfo, image, accountNumber }) => {
+const PerformancePoster = ({
+  title,
+  date,
+  location,
+  company,
+  supportInfo,
+  image,
+  accountNumber,
+}) => {
   const [open, setOpen] = useState(false)
   const [alertMessage, setAlertMessage] = useState('')
   const [alertSeverity, setAlertSeverity] = useState('success')
@@ -38,6 +46,9 @@ const PerformancePoster = ({ title, company, supportInfo, image, accountNumber }
         <CardMedia component='img' height='300' src={image} alt={title} />
         <CardContent className='text-center'>
           <h1 className='text-2xl font-bold'>{title}</h1>
+          <Typography variant='body2' color='text.secondary'>
+            {date} | {location}
+          </Typography>
           <p className='text-gray-600'>{company}</p>
           <Box display='flex' alignItems='left' justifyContent='left'>
             <Box
@@ -45,6 +56,7 @@ const PerformancePoster = ({ title, company, supportInfo, image, accountNumber }
               alignItems='center'
               className='text-gray-600'
               onClick={handleCopyClick}
+              sx={{ cursor: 'pointer' }}
             >
               <Typography sx={{ textDecoration: 'underline' }}>{supportInfo}</Typography>
               <ContentCopyIcon className='ml-3' />

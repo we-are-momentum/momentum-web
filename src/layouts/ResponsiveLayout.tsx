@@ -23,40 +23,52 @@ const performancesData = [
     synopsis: '시놉시스 내용이 여기에 들어갑니다...',
     schedule: [
       {
-        round: '1회차',
-        dateTime: '2025/04/19 19:00',
-        groups: [{ members: ['홍길동', '김길동', '김아영'] }],
+        date: '2025-04-19',
+        day: '토',
+        groups: [
+          {
+            round: '1',
+            time: '13:00',
+            actors: ['홍길동', '김길동', '김아영'],
+          },
+          {
+            round: '2',
+            time: '16:00',
+            actors: ['홍길동', '김길동', '김아영'],
+          },
+          {
+            round: '3',
+            time: '19:00',
+            actors: ['홍길동', '김길동', '김아영'],
+          },
+        ],
       },
       {
-        round: '2회차',
-        dateTime: '',
-        groups: [{ members: ['홍길동', '김길동'] }],
-      },
-      {
-        round: '3회차',
-        dateTime: '',
-        groups: [{ members: ['홍길동', '김길동'] }],
-      },
-      {
-        round: '4회차',
-        dateTime: '',
-        groups: [{ members: ['홍길동', '김길동'] }],
-      },
-      {
-        round: '5회차',
-        dateTime: '',
-        groups: [{ members: ['홍길동', '김길동'] }],
-      },
-      {
-        round: '6회차',
-        dateTime: '',
-        groups: [{ members: ['홍길동', '김길동'] }],
+        date: '2025-04-20',
+        day: '일',
+        groups: [
+          {
+            round: '4',
+            time: '12:00',
+            actors: ['홍길동', '김길동', '김아영'],
+          },
+          {
+            round: '5',
+            time: '15:00',
+            actors: ['홍길동', '김길동', '김아영'],
+          },
+          {
+            round: '6',
+            time: '18:00',
+            actors: ['홍길동', '김길동', '김아영'],
+          },
+        ],
       },
     ],
-    members: [
-      { role: '연출', name: '홍길동' },
+    staffs: [
+      { role: '연출', name: '황지수' },
       { role: '조연출', name: '홍길동' },
-      { role: '배우', name: '누구누구' },
+      { role: '출연', name: '누구누구' },
     ],
   },
   // 다른 공연 데이터 추가 가능

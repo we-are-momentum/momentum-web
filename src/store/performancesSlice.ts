@@ -1,16 +1,18 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 
 interface Group {
-  members: string[]
+  round: string
+  time: string
+  actors: string[]
 }
 
 interface Schedule {
-  round: string
-  dateTime: string
+  date: string
+  day: string
   groups: Group[]
 }
 
-interface Member {
+interface Staff {
   role: string
   name: string
 }
@@ -26,7 +28,7 @@ interface Performance {
   accountNumber: string
   synopsis: string
   schedule: Schedule[]
-  members: Member[]
+  staffs: Staff[]
 }
 
 interface PerformancesState {
