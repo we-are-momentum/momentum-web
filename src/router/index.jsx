@@ -10,13 +10,10 @@ function AppRouter() {
   const isMobile = useMediaQuery(theme.breakpoints.down('md'))
 
   return (
-    <Router
-      basename={import.meta.env.VITE_PUBLIC_URL}
-      future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
-    >
+    <Router future={{ v7_startTransition: true, v7_relativeSplatPath: true }}>
       <Routes>
         <Route
-          path='/'
+          path='/momentum-web'
           element={
             isMobile ? (
               <Navigate to='/performances' />
