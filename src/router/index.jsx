@@ -13,11 +13,21 @@ function AppRouter() {
   return (
     <Router basename={basename}>
       <Routes>
-        <Route
+        {/* <Route
           path='/'
           element={
             isMobile ? (
               <Navigate to={'/performances'} />
+            ) : (
+              <ResponsiveLayout mobileComponent={<Home />} desktopComponent={<Home />} />
+            )
+          }
+        /> */}
+        <Route
+          path='/'
+          element={
+            isMobile ? (
+              <Navigate to={'/performances/20250001'} />
             ) : (
               <ResponsiveLayout mobileComponent={<Home />} desktopComponent={<Home />} />
             )

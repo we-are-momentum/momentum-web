@@ -22,7 +22,7 @@ function ResponsiveAppBar() {
     >
       <Container maxWidth='xl'>
         <Toolbar disableGutters>
-          <Link to='/' style={{ marginRight: '8px', height: '70px' }}>
+          <Link to='/performances' style={{ marginRight: '8px', height: '70px' }}>
             <img
               src={logoSrc} // 로고 이미지 경로를 여기에 입력하세요
               alt='Logo'
