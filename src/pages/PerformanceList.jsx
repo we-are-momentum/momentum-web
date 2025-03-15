@@ -12,9 +12,9 @@ const PerformanceList = () => {
   return (
     <Container sx={{ mt: 4, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
       <Typography variant='h4' gutterBottom>
-        공연 리스트
+        공연 목록
       </Typography>
-      <Box width='100%' display='flex' justifyContent='center'>
+      <Box width='100%' maxWidth='1200px' display='flex' justifyContent='center'>
         <PerformanceGrid onCardClick={handleCardClick} />
       </Box>
     </Container>

@@ -10,11 +10,11 @@ const PerformanceGrid = ({ onCardClick }) => {
       {performances.map((performance) => (
         <Grid2
           key={performance.id}
-          size={{ xs: 12, sm: 6, md: 6 }}
+          size={{ xs: 12, sm: 6, md: 4, lg: 3 }}
           sx={{ display: 'flex', justifyContent: 'center' }}
         >
           <Card
-            sx={{ width: '100%', maxWidth: 364, textAlign: 'center', cursor: 'pointer' }}
+            sx={{ width: '100%', maxWidth: 345, textAlign: 'center', cursor: 'pointer' }}
             onClick={() => onCardClick(performance.id)}
           >
             <CardMedia

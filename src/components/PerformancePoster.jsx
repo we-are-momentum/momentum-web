@@ -3,16 +3,16 @@ import { Card, CardContent, CardMedia, Snackbar, Button } from '@mui/material'
 import MuiAlert from '@mui/material/Alert'
 import Slide from '@mui/material/Slide'
 
-const PerformancePoster = ({ title, company, supportInfo, image }) => {
+const PerformancePoster = ({ title, company, supportInfo, image, accountNumber }) => {
   const [open, setOpen] = useState(false)
   const [alertMessage, setAlertMessage] = useState('')
   const [alertSeverity, setAlertSeverity] = useState('success')
 
   const handleCopyClick = () => {
     navigator.clipboard
-      .writeText(supportInfo)
+      .writeText(accountNumber)
       .then(() => {
-        setAlertMessage('후원금 계좌가 복사되었습니다.')
+        setAlertMessage(`후원금 계좌가 복사되었습니다. ${accountNumber}`)
         setAlertSeverity('success')
         setOpen(true)
       })
@@ -38,6 +38,7 @@ const PerformancePoster = ({ title, company, supportInfo, image }) => {
         <CardContent className='text-center'>
           <h1 className='text-2xl font-bold'>{title}</h1>
           <p className='text-gray-600'>{company}</p>
+          <p className='text-gray-600'>{supportInfo}</p>
           <Button variant='contained' color='primary' className='mt-2' onClick={handleCopyClick}>
             후원금 계좌 복사
           </Button>

@@ -15,18 +15,11 @@ const PerformanceSchedule = ({ schedule }) => {
       <h2 className='text-xl font-bold'>Casting Schedule</h2>
       <TableContainer component={Paper} className='mt-2'>
         <Table>
-          <TableHead>
+          {/* <TableHead>
             <TableRow>
-              {/* <TableCell>회차</TableCell>
-              <TableCell>홍길동</TableCell>
-              <TableCell>김길동</TableCell>
-              <TableCell>이길동</TableCell> */}
-              <TableCell></TableCell>
-              <TableCell></TableCell>
-              <TableCell></TableCell>
-              <TableCell></TableCell>
+            
             </TableRow>
-          </TableHead>
+          </TableHead> */}
           <TableBody>
             {schedule.map((row) => (
               <TableRow key={row.round}>

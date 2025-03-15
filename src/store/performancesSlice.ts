@@ -22,6 +22,7 @@ interface Performance {
   location: string
   image: string
   supportInfo: string
+  accountNumber: string
   synopsis: string
   schedule: Schedule[]
   members: Member[]

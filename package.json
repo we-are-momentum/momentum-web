@@ -12,7 +12,7 @@
     "clean": "rm -rf node_modules package-lock.json dist",
     "dev": "vite",
     "start-dev": "env-cmd -f .env.development npm install && vite",
-    "start-prod": "env-cmd -f .env.production npm run clean && npm install && vite build",
+    "start-prod": "env-cmd -f .env.production npm run clean && npm install && vite build && vite",
     "build": "vite build",
     "lint": "eslint .",
     "format": "prettier --write ./src",

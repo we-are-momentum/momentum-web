@@ -7,15 +7,19 @@ import { Box } from '@mui/material'
 import { RootState, AppDispatch } from '../store'
 import { setPerformances } from '../store/performancesSlice'
 
+const location = window.location
+const basename = location.pathname.startsWith('/momentum-web') ? '/momentum-web' : ''
+
 const performancesData = [
   {
     id: 20250001,
-    title: '뮤지컬 보이지 않아도',
+    title: '보이지 않아도',
     company: '극단 모멘텀',
     date: '2025-04-19 ~ 2025-04-20',
     location: '구로 예술나무 씨어터',
-    image: '/public/logo.png',
-    supportInfo: '후원금 계좌 복사\n은행: 01-1234-12456',
+    image: `${basename}/logo_dark.png`,
+    supportInfo: '카카오뱅크 01-1234-12456 / 예금주: 이*태',
+    accountNumber: '카카오뱅크 01-1234-12456',
     synopsis: '시놉시스 내용이 여기에 들어갑니다...',
     schedule: [
       {

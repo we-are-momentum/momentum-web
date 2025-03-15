@@ -32,6 +32,7 @@ const PerformanceDetail = () => {
         company={performance.company}
         supportInfo={performance.supportInfo}
         image={performance.image}
+        accountNumber={performance.accountNumber}
       />
       <PerformanceSynopsis synopsis={performance.synopsis} />
       <PerformanceSchedule schedule={performance.schedule} />

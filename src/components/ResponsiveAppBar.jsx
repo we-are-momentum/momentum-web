@@ -1,18 +1,18 @@
+import MenuIcon from '@mui/icons-material/Menu'
+import { useMediaQuery, useTheme } from '@mui/material'
+import AppBar from '@mui/material/AppBar'
+import Avatar from '@mui/material/Avatar'
+import Box from '@mui/material/Box'
+import Button from '@mui/material/Button'
+import Container from '@mui/material/Container'
+import IconButton from '@mui/material/IconButton'
+import Menu from '@mui/material/Menu'
+import MenuItem from '@mui/material/MenuItem'
+import Toolbar from '@mui/material/Toolbar'
+import Tooltip from '@mui/material/Tooltip'
+import Typography from '@mui/material/Typography'
 import * as React from 'react'
 import { Link } from 'react-router-dom'
-import AppBar from '@mui/material/AppBar'
-import Box from '@mui/material/Box'
-import Toolbar from '@mui/material/Toolbar'
-import IconButton from '@mui/material/IconButton'
-import Typography from '@mui/material/Typography'
-import Menu from '@mui/material/Menu'
-import MenuIcon from '@mui/icons-material/Menu'
-import Container from '@mui/material/Container'
-import Avatar from '@mui/material/Avatar'
-import Button from '@mui/material/Button'
-import Tooltip from '@mui/material/Tooltip'
-import MenuItem from '@mui/material/MenuItem'
-import { useMediaQuery, useTheme } from '@mui/material'
 
 const pages = []
 const settings = []
@@ -24,6 +24,8 @@ function ResponsiveAppBar() {
   const theme = useTheme()
   const isDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
   const isMobile = useMediaQuery(theme.breakpoints.down('md'))
+  const location = window.location
+  const basename = location.pathname.startsWith('/momentum-web') ? '/momentum-web' : ''
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget)
@@ -39,6 +41,7 @@ function ResponsiveAppBar() {
   const handleCloseUserMenu = () => {
     setAnchorElUser(null)
   }
+  const logoSrc = isDarkMode ? `${basename}/logo_dark.png` : `${basename}/logo_light.png`
 
   return (
     <AppBar
@@ -50,30 +53,13 @@ function ResponsiveAppBar() {
     >
       <Container maxWidth='xl'>
         <Toolbar disableGutters>
-          <img
-            src='/logo.png' // 로고 이미지 경로를 여기에 입력하세요
-            alt='Logo'
-            style={{ display: isMobile ? 'none' : 'flex', marginRight: '8px', height: '40px' }}
-          />
-          <Typography
-            variant='h6'
-            noWrap
-            component='a'
-            href='/'
-            sx={{
-              mr: 2,
-              display: { xs: 'none', md: 'flex' },
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-            }}
-          >
-            momentum
-          </Typography>
-
-          {/* 임시로 모바일 화면에서 햄버거 버튼과 프로필 아이콘을 숨깁니다 */}
+          <Link to='/' style={{ marginRight: '8px', height: '70px' }}>
+            <img
+              src={logoSrc} // 로고 이미지 경로를 여기에 입력하세요
+              alt='Logo'
+              style={{ marginRight: '8px', height: '70px' }}
+            />
+          </Link>
           {!isMobile && (
             <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
               <IconButton
@@ -117,30 +103,6 @@ function ResponsiveAppBar() {
               </Menu>
             </Box>
           )}
-          <img
-            src='/logo.png' // 로고 이미지 경로를 여기에 입력하세요
-            alt='Logo'
-            style={{ display: isMobile ? 'flex' : 'none', marginRight: '8px', height: '40px' }}
-          />
-          <Typography
-            variant='h5'
-            noWrap
-            component='a'
-            href='/'
-            sx={{
-              mr: 2,
-              display: { xs: 'flex', md: 'none' },
-              flexGrow: 1,
-              fontFamily: 'monospace',
-              fontWeight: 700,
-              letterSpacing: '.3rem',
-              color: 'inherit',
-              textDecoration: 'none',
-              textAlign: 'center', // 중앙 정렬
-            }}
-          >
-            momentum
-          </Typography>
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button

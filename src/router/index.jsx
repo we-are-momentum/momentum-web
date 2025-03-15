@@ -11,7 +11,7 @@ function AppRouter() {
 
   return (
     <Router
-      basename={import.meta.env.PUBLIC_URL}
+      basename='/momentum-web'
       future={{ v7_startTransition: true, v7_relativeSplatPath: true }}
     >
       <Routes>
