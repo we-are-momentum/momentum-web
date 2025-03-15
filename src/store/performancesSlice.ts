@@ -14,7 +14,13 @@ interface Schedule {
 
 interface Staff {
   role: string
-  name: string
+  name: string[]
+}
+
+interface SnapShot {
+  image: string
+  title: string
+  description: string
 }
 
 interface Performance {
@@ -29,6 +35,7 @@ interface Performance {
   synopsis: string
   schedule: Schedule[]
   staffs: Staff[]
+  snapshots: SnapShot[]
 }
 
 interface PerformancesState {

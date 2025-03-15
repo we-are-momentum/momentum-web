@@ -10,6 +10,19 @@ import { setPerformances } from '../store/performancesSlice'
 const location = window.location
 const basename = location.pathname.startsWith('/momentum-web') ? '/momentum-web' : ''
 
+const roka = {
+  teamA: ['신기은', '임현준', '조강형'],
+  teamB: ['김현수', '박동효', '조명식'],
+}
+
+const kpa = { teamA: ['양희승', '김재혁', '양정모'], teamB: ['이경태', '이원찬', '김민수'] }
+
+const goddess = {
+  teamA: ['양초롱'],
+  teamB: ['황지수'],
+}
+const specialGuest = '김하연'
+
 const performancesData = [
   {
     id: 20250001,
@@ -66,9 +79,19 @@ const performancesData = [
       },
     ],
     staffs: [
-      { role: '연출', name: '황지수' },
-      { role: '조연출', name: '홍길동' },
-      { role: '출연', name: '누구누구' },
+      { role: '연출', name: ['황지수'] },
+      { role: '조연출', name: ['홍길동'] },
+      {
+        role: '출연',
+        name: [''],
+      },
+    ],
+    snapshots: [
+      {
+        image: `${basename}/logo.png`,
+        title: '샘플',
+        description: '샘플 이미지 설명',
+      },
     ],
   },
   // 다른 공연 데이터 추가 가능

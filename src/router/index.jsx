@@ -11,7 +11,7 @@ function AppRouter() {
   const basename = '/momentum-web'
 
   return (
-    <Router basename={basename}>
+    <Router basename={basename} future={{ v7_relativeSplatPath: true, v7_startTransition: true }}>
       <Routes>
         {/* <Route
           path='/'

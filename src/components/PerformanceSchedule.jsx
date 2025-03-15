@@ -12,15 +12,15 @@ import {
 const PerformanceSchedule = ({ schedule }) => {
   return (
     <section className='mt-6'>
-      <h2 className='text-xl font-bold'>Casting Schedule</h2>
-      <TableContainer component={Paper} className='mt-2'>
-        <Table>
+      <h2 className='text-xl font-bold text-center'>Casting Schedule</h2>
+      <TableContainer component={Paper} className='mt-2 overflow-x-auto'>
+        <Table className='min-w-full'>
           <TableHead>
             <TableRow>
-              <TableCell>Date</TableCell>
-              <TableCell>Day</TableCell>
-              <TableCell>Time</TableCell>
-              <TableCell colSpan={7} align='center'>
+              <TableCell className='text-xs md:text-base'>Date</TableCell>
+              <TableCell className='text-xs md:text-base'>Day</TableCell>
+              <TableCell className='text-xs md:text-base'>Time</TableCell>
+              <TableCell className='text-xs md:text-base' colSpan={7} align='center'>
                 출연진
               </TableCell>
             </TableRow>
@@ -32,15 +32,25 @@ const PerformanceSchedule = ({ schedule }) => {
                   <TableRow key={`${daySchedule.date}-${group.round}`}>
                     {index === 0 && (
                       <>
-                        <TableCell rowSpan={daySchedule.groups.length}>
+                        <TableCell
+                          className='text-xs md:text-base'
+                          rowSpan={daySchedule.groups.length}
+                        >
                           {daySchedule.date}
                         </TableCell>
-                        <TableCell rowSpan={daySchedule.groups.length}>{daySchedule.day}</TableCell>
+                        <TableCell
+                          className='text-xs md:text-base'
+                          rowSpan={daySchedule.groups.length}
+                        >
+                          {daySchedule.day}
+                        </TableCell>
                       </>
                     )}
-                    <TableCell>{group.time}</TableCell>
+                    <TableCell className='text-xs md:text-base'>{group.time}</TableCell>
                     {group.actors.map((actor, idx) => (
-                      <TableCell key={idx}>{actor}</TableCell>
+                      <TableCell className='text-xs md:text-base' key={idx}>
+                        {actor}
+                      </TableCell>
                     ))}
                   </TableRow>
                 ))}
