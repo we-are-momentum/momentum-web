@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: oklch(0.13 0.028 261.692 / 0.95);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -83,6 +83,4 @@ body {
   }
 }
 
-@tailwind base;
-@tailwind components;
 @tailwind utilities;

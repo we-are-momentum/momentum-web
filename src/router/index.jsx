@@ -19,26 +19,26 @@ function AppRouter() {
             isMobile ? (
               <Navigate to={'/performances/20250001'} />
             ) : (
-              <ResponsiveLayout mobileComponent={<Home />} desktopComponent={<Home />} />
+              <ResponsiveLayout>
+                <Home />
+              </ResponsiveLayout>
             )
           }
         />
         <Route
           path='/performances'
           element={
-            <ResponsiveLayout
-              mobileComponent={<Performance />}
-              desktopComponent={<Performance />}
-            />
+            <ResponsiveLayout>
+              <Performance />
+            </ResponsiveLayout>
           }
         />
         <Route
           path='/performances/:id'
           element={
-            <ResponsiveLayout
-              mobileComponent={<PerformanceDetail />}
-              desktopComponent={<PerformanceDetail />}
-            />
+            <ResponsiveLayout>
+              <PerformanceDetail />
+            </ResponsiveLayout>
           }
         />
       </Routes>

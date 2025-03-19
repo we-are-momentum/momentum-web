@@ -1,9 +1,8 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import useDeviceType from '@/hooks/useDeviceType'
-import ResponsiveAppBar from '../components/ResponsiveAppBar'
 import Footer from '@/layouts/Footer'
-import { RootState, AppDispatch } from '../store'
+import { useEffect } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
+import ResponsiveAppBar from '../components/ResponsiveAppBar'
+import { AppDispatch, RootState } from '../store'
 import { setPerformances } from '../store/performancesSlice'
 
 const location = window.location
@@ -96,8 +95,7 @@ const performancesData = [
   // 다른 공연 데이터 추가 가능
 ]
 
-const ResponsiveLayout = ({ mobileComponent, desktopComponent }) => {
-  const isMobile = useDeviceType()
+const ResponsiveLayout = ({ children }) => {
   const dispatch = useDispatch<AppDispatch>()
   const performances = useSelector((state: RootState) => state.performances.performances)
 
@@ -108,26 +106,18 @@ const ResponsiveLayout = ({ mobileComponent, desktopComponent }) => {
   }, [dispatch, performances.length])
 
   return (
-    <div style={{ width: '100%', height: '100%', overflow: 'hidden' }}>
+    <div className='relative min-h-screen w-full overflow-x-hidden'>
       {/* 공통 AppBar */}
       <ResponsiveAppBar />
-
-      {/* 모바일과 데스크탑에 따라 다른 레이아웃 렌더링 */}
-      {isMobile ? (
-        <div style={{ padding: '16px', backgroundColor: '#f9f9f9' }}>{mobileComponent}</div>
-      ) : (
-        <div
-          style={{
-            margin: '0 auto',
-            maxWidth: '1200px',
-            padding: '24px',
-            backgroundColor: '#ffffff',
-          }}
-        >
-          {desktopComponent}
+      <div className='pt-16'>
+        {' '}
+        {/* AppBar 높이만큼 상단 패딩 추가 */}
+        <div className='relative items-center justify-center w-full overflow-x-hidden lg:pt-40 lg:pb-40 xl:pt-40 xl:pb-64'>
+          <div className='container flex flex-col items-center justify-between h-full max-w-6xl px-8 mx-auto lg:flex-row xl:px-0'>
+            {children}
+          </div>
         </div>
-      )}
-
+      </div>
       {/* 공통 Footer */}
       <Footer />
     </div>

@@ -10,9 +10,9 @@ function ResponsiveAppBar() {
   const lightLogoSrc = `${basename}/logo_light.png`
 
   return (
-    <div
+    <header
       className={
-        'fixed top-0 left-0 w-full z-50 bg-white dark:bg-gray-800 ring shadow-xl ring-gray-900/5'
+        'fixed top-0 left-0 w-full z-50 bg-white dark:bg-gray-900 ring shadow-xl ring-gray-900/5 dark:ring-gray-100/75'
       }
     >
       <div className='container mx-auto px-4'>
@@ -33,7 +33,7 @@ function ResponsiveAppBar() {
           </Link>
         </div>
       </div>
-    </div>
+    </header>
   )
 }
 

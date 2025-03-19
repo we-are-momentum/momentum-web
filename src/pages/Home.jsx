@@ -23,7 +23,9 @@ const DesktopView = () => (
 )
 
 const Home = () => (
-  <ResponsiveLayout mobileComponent={<MobileView />} desktopComponent={<DesktopView />} />
+  <ResponsiveLayout>
+    <DesktopView />
+  </ResponsiveLayout>
 )
 
 export default Home
