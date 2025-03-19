@@ -13,16 +13,6 @@ function AppRouter() {
   return (
     <Router basename={basename} future={{ v7_relativeSplatPath: true, v7_startTransition: true }}>
       <Routes>
-        {/* <Route
-          path='/'
-          element={
-            isMobile ? (
-              <Navigate to={'/performances'} />
-            ) : (
-              <ResponsiveLayout mobileComponent={<Home />} desktopComponent={<Home />} />
-            )
-          }
-        /> */}
         <Route
           path='/'
           element={

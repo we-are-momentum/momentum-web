@@ -27,6 +27,7 @@
     "@mui/icons-material": "^6.4.7",
     "@mui/material": "^6.4.7",
     "@reduxjs/toolkit": "^2.6.0",
+    "@tailwindcss/vite": "^4.0.14",
     "env-cmd": "^10.1.0",
     "gh-pages": "^6.3.0",
     "react": "^19.0.0",

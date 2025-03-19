@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import useDeviceType from '@/hooks/useDeviceType'
 import ResponsiveAppBar from '../components/ResponsiveAppBar'
 import Footer from '@/layouts/Footer'
-import { Box } from '@mui/material'
 import { RootState, AppDispatch } from '../store'
 import { setPerformances } from '../store/performancesSlice'
 
@@ -109,31 +108,29 @@ const ResponsiveLayout = ({ mobileComponent, desktopComponent }) => {
   }, [dispatch, performances.length])
 
   return (
-    <Box
-      sx={{
-        display: 'flex',
-        flexDirection: 'column',
-        minHeight: '100vh',
-        alignItems: 'center',
-        width: '100%',
-        maxWidth: '1280px', // 데스크탑 환경에서 최대 너비 설정
-        mx: 'auto', // 중앙 정렬
-        px: isMobile ? 2 : 4, // 패딩 설정
-      }}
-    >
+    <div style={{ width: '100%', height: '100%', overflow: 'hidden' }}>
+      {/* 공통 AppBar */}
       <ResponsiveAppBar />
-      <Box
-        component='main'
-        sx={{
-          flexGrow: 1,
-          pt: '64px',
-          width: '100%',
-        }}
-      >
-        {isMobile ? mobileComponent : desktopComponent}
-      </Box>
+
+      {/* 모바일과 데스크탑에 따라 다른 레이아웃 렌더링 */}
+      {isMobile ? (
+        <div style={{ padding: '16px', backgroundColor: '#f9f9f9' }}>{mobileComponent}</div>
+      ) : (
+        <div
+          style={{
+            margin: '0 auto',
+            maxWidth: '1200px',
+            padding: '24px',
+            backgroundColor: '#ffffff',
+          }}
+        >
+          {desktopComponent}
+        </div>
+      )}
+
+      {/* 공통 Footer */}
       <Footer />
-    </Box>
+    </div>
   )
 }
 

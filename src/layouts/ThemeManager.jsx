@@ -1,36 +1,16 @@
-import * as React from 'react'
-import { ThemeProvider, createTheme } from '@mui/material/styles'
-import CssBaseline from '@mui/material/CssBaseline'
-import useMediaQuery from '@mui/material/useMediaQuery'
+import React, { useEffect } from 'react'
 
 const ThemeManager = ({ children }) => {
-  const prefersDarkMode = useMediaQuery('(prefers-color-scheme: dark)')
+  useEffect(() => {
+    const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    if (prefersDarkMode) {
+      document.documentElement.classList.add('dark') // Tailwind의 다크 모드 활성화
+    } else {
+      document.documentElement.classList.remove('dark')
+    }
+  }, [])
 
-  const theme = React.useMemo(
-    () =>
-      createTheme({
-        palette: {
-          mode: prefersDarkMode ? 'dark' : 'light',
-          primary: {
-            main: prefersDarkMode ? '#90caf9' : '#ffffff',
-          },
-          text: {
-            primary: prefersDarkMode ? '#ffffff' : '#000000',
-          },
-          background: {
-            default: prefersDarkMode ? '#121212' : '#ffffff',
-          },
-        },
-      }),
-    [prefersDarkMode],
-  )
-
-  return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      {children}
-    </ThemeProvider>
-  )
+  return <>{children}</>
 }
 
 export default ThemeManager

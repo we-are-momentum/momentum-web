@@ -1,6 +1,3 @@
-import React from 'react'
-import ResponsiveAppBar from '@/components/ResponsiveAppBar'
-import Footer from '@/layouts/Footer'
 import ResponsiveLayout from '@/layouts/ResponsiveLayout'
 
 const MobileView = () => (
@@ -26,13 +23,7 @@ const DesktopView = () => (
 )
 
 const Home = () => (
-  <div className='min-h-screen bg-gray-50 flex flex-col'>
-    <ResponsiveAppBar />
-    <div className='flex-grow flex flex-col justify-center items-center pt-[64px]'>
-      <ResponsiveLayout mobileComponent={<MobileView />} desktopComponent={<DesktopView />} />
-    </div>
-    <Footer />
-  </div>
+  <ResponsiveLayout mobileComponent={<MobileView />} desktopComponent={<DesktopView />} />
 )
 
 export default Home
