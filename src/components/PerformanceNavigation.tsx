@@ -51,7 +51,7 @@ const PerformanceNavigation = () => {
         transition-all duration-150 transform
         ${
           isVisible
-            ? 'translate-y-0 opacity-100 bg-white/80 dark:bg-neutral-950/80 backdrop-blur-sm shadow-lg'
+            ? 'translate-y-0 opacity-100 bg-white dark:bg-neutral-950 backdrop-blur-sm shadow-lg'
             : '-translate-y-full opacity-0'
         }
       `}
