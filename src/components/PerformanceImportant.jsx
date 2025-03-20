@@ -1,28 +1,33 @@
-import React from 'react'
-import WarningIcon from '@mui/icons-material/Warning'
-
 const PerformanceImportant = () => {
+  const notices = [
+    '커튼콜을 제외한 모든 촬영은 불가합니다.',
+    '커튼콜 촬영은 가능하지만, SNS 및 온라인 업로드는 불가합니다.',
+  ]
+
   return (
     <section className='mt-6'>
       <h2 className='text-3xl font-bold mb-4 flex flex-col items-center text-center'>주의 사항</h2>
-      <div className='bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4' role='alert'>
-        <div className='overflow-x-auto text-center'>
-          <table className='min-w-full divide-y divide-neutral-200'>
-            <tbody className='bg-white divide-y divide-neutral-200'>
-              <tr>
-                <td className='px-6 py-4 whitespace-nowrap text-sm text-neutral-700'>
-                  커튼콜을 제외한 모든 촬영은 불가합니다.
-                </td>
-              </tr>
-              <tr>
-                <td className='px-6 py-4 whitespace-nowrap text-sm text-neutral-700'>
-                  커튼콜 촬영은 가능하지만, SNS 및 온라인 업로드는 불가합니다.
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </div>
+      <ul className='text-left bg-white text-neutral-700 dark:bg-neutral-800 dark:text-neutral-200 p-4 rounded-lg'>
+        {notices.map((notice, index) => (
+          <li
+            key={index}
+            className={`
+              px-4 py-3 
+              sm:text-md 
+              leading-relaxed
+              break-keep
+              whitespace-pre-wrap
+              ${
+                index !== notices.length - 1
+                  ? 'border-b border-neutral-300 dark:border-neutral-600'
+                  : ''
+              }
+            `}
+          >
+            {notice}
+          </li>
+        ))}
+      </ul>
     </section>
   )
 }

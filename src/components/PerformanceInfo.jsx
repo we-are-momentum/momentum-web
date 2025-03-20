@@ -49,7 +49,7 @@ const PerformanceInfo = ({ title, date, location, company, supportInfo, accountN
 
   return (
     <div
-      className='relative min-h-screen w-full flex items-end justify-center'
+      className='relative min-h-[90vh] w-full flex items-end justify-center' // min-h-screen에서 min-h-[90vh]로 변경
       style={{
         opacity,
         transform: `translateY(${translateY}px)`,
@@ -76,6 +76,8 @@ const PerformanceInfo = ({ title, date, location, company, supportInfo, accountN
 
       {/* Hero 섹션 */}
       <div className='w-full flex items-center justify-center mb-32'>
+        {' '}
+        {/* mb-32에서 mb-24로 변경 */}
         <div className='container max-w-6xl px-8 mx-auto flex items-center justify-center'>
           <div className='z-30 flex flex-col items-center w-full max-w-xl text-center'>
             <h2 className='mb-2 text-2xl text-neutral-800 dark:text-neutral-200 sm:text-lg xl:text-xl'>
@@ -99,20 +101,22 @@ const PerformanceInfo = ({ title, date, location, company, supportInfo, accountN
                 <span className='whitespace-nowrap'> / </span>
                 예금주: 이*태
               </span>
-              <svg
-                className='w-5 h-5'
-                fill='none'
-                stroke='currentColor'
-                viewBox='0 0 24 24'
-                xmlns='http://www.w3.org/2000/svg'
-              >
-                <path
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  strokeWidth={2}
-                  d='M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2'
-                />
-              </svg>
+              <button>
+                <svg
+                  className='w-5 h-5'
+                  fill='none'
+                  stroke='currentColor'
+                  viewBox='0 0 24 24'
+                  xmlns='http://www.w3.org/2000/svg'
+                >
+                  <path
+                    strokeLinecap='round'
+                    strokeLinejoin='round'
+                    strokeWidth={2}
+                    d='M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2'
+                  />
+                </svg>
+              </button>
             </div>
           </div>
         </div>
@@ -120,7 +124,7 @@ const PerformanceInfo = ({ title, date, location, company, supportInfo, accountN
 
       {/* Scroll Down 아이콘 */}
       <div
-        className='absolute bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce'
+        className='absolute bottom-16 left-1/2 transform -translate-x-1/2 animate-bounce' // bottom-12에서 bottom-16으로 변경
         style={{ opacity }}
       >
         <div className='flex flex-col items-center text-neutral-400 dark:text-neutral-500'>

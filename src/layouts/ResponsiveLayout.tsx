@@ -90,14 +90,6 @@ const performancesData = [
         ],
       },
     ],
-    staffs: [
-      { role: '연출', name: ['황지수'] },
-      { role: '조연출', name: ['홍길동'] },
-      {
-        role: '출연',
-        name: [''],
-      },
-    ],
     snapshots: [
       {
         image: `${basename}/logo.png`,

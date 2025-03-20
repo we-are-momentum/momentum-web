@@ -34,7 +34,6 @@ interface Performance {
   accountNumber: string
   synopsis: string
   schedule: Schedule[]
-  staffs: Staff[]
   snapshots: SnapShot[]
 }
 

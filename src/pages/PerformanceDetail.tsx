@@ -1,14 +1,13 @@
-import PerformanceStaffs from '@/components/PerformanceStaffs'
-import PerformanceInfo from '@/components/PerformanceInfo'
-import PerformanceSchedule from '@/components/PerformanceSchedule'
-import PerformanceSynopsis from '@/components/PerformanceSynopsis'
-import { Container, Typography } from '@mui/material'
-import { useParams } from 'react-router-dom'
-import { useSelector } from 'react-redux'
-import { RootState } from '@/store'
 import PerformanceImportant from '@/components/PerformanceImportant'
-import PerformanceSnaps from '@/components/PerformanceSnaps'
+import PerformanceInfo from '@/components/PerformanceInfo'
 import PerformanceNavigation from '@/components/PerformanceNavigation'
+import PerformanceSchedule from '@/components/PerformanceSchedule'
+import PerformanceSnaps from '@/components/PerformanceSnaps'
+import PerformanceSynopsis from '@/components/PerformanceSynopsis'
+import { RootState } from '@/store'
+import { Container, Typography } from '@mui/material'
+import { useSelector } from 'react-redux'
+import { useParams } from 'react-router-dom'
 
 const PerformanceDetail = () => {
   const { id } = useParams()
@@ -37,7 +36,7 @@ const PerformanceDetail = () => {
           alt={performance.title}
           className='w-full h-full object-cover'
         />
-        <div className='absolute inset-0 bg-gradient-to-b from-transparent via-white/70 to-white dark:via-neutral-900/70 dark:to-neutral-900' />
+        <div className='absolute inset-0 bg-gradient-to-b from-transparent via-white/10 to-white dark:via-neutral-900/70 dark:to-neutral-900' />
       </div>
 
       {/* 네비게이션 */}
@@ -54,7 +53,7 @@ const PerformanceDetail = () => {
           accountNumber={performance.accountNumber}
         />
 
-        <div className='bg-white dark:bg-neutral-900 backdrop-blur-sm'>
+        <div className='bg-white dark:bg-neutral-900 backdrop-blur-sm py-8'>
           <div className='max-w-6xl mx-auto px-4'>
             <div id='synopsis'>
               <PerformanceSynopsis synopsis={performance.synopsis} />
@@ -66,7 +65,6 @@ const PerformanceDetail = () => {
               <PerformanceSnaps snaps={performance.snapshots} />
             </div>
             <PerformanceImportant />
-            <PerformanceStaffs staffs={performance.staffs} />
           </div>
         </div>
       </div>
