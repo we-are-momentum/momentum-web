@@ -3,7 +3,7 @@ import React from 'react'
 const PerformanceSnaps = ({ snaps }) => {
   return (
     <section className='mt-6'>
-      <h2 className='text-xl font-bold mb-4 text-center'>Performance Snaps</h2>
+      <h2 className='text-3xl font-bold mb-4 text-center'>Snapshot</h2>
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
         {snaps.map((snap, index) => (
           <div key={index} className='bg-white shadow-lg rounded-lg overflow-hidden'>

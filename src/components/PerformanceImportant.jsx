@@ -4,10 +4,7 @@ import WarningIcon from '@mui/icons-material/Warning'
 const PerformanceImportant = () => {
   return (
     <section className='mt-6'>
-      <h2 className='text-xl font-bold mb-4 flex flex-col items-center text-center'>
-        <WarningIcon className='h-5 w-5 text-yellow-500 mr-2' />
-        주의 사항
-      </h2>
+      <h2 className='text-3xl font-bold mb-4 flex flex-col items-center text-center'>주의 사항</h2>
       <div className='bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4' role='alert'>
         <div className='overflow-x-auto text-center'>
           <table className='min-w-full divide-y divide-neutral-200'>

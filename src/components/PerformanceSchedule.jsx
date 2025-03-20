@@ -12,7 +12,7 @@ import {
 const PerformanceSchedule = ({ schedule }) => {
   return (
     <section className='mt-6'>
-      <h2 className='text-xl font-bold text-center'>Casting Schedule</h2>
+      <h2 className='text-3xl font-bold text-center'>Schedule</h2>
       <TableContainer component={Paper} className='mt-2 overflow-x-auto'>
         <Table className='min-w-full'>
           <TableHead>

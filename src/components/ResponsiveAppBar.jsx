@@ -24,7 +24,7 @@ function ResponsiveAppBar() {
     <header
       className={`
         fixed top-0 left-0 w-full z-50 transition-colors duration-300
-        ${isAtTop ? 'bg-transparent' : 'bg-white/80 backdrop-blur-sm dark:bg-neutral-950/80'}
+        ${isAtTop ? 'bg-transparent' : 'bg-white backdrop-blur-sm dark:bg-neutral-950'}
       `}
     >
       <div className='container mx-auto px-4'>

@@ -65,6 +65,7 @@ const PerformanceInfo = ({ title, date, location, company, supportInfo, accountN
             fixed left-1/2 bottom-8 z-50 p-4 rounded-lg shadow-lg
             transform -translate-x-1/2
             transition-all duration-300 ease-in-out
+            text-sm sm:text-base
             ${showAlert ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}
             ${alertType === 'success' ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'}
           `}
@@ -77,7 +78,7 @@ const PerformanceInfo = ({ title, date, location, company, supportInfo, accountN
       <div className='w-full flex items-center justify-center mb-32'>
         <div className='container max-w-6xl px-8 mx-auto flex items-center justify-center'>
           <div className='z-30 flex flex-col items-center w-full max-w-xl text-center'>
-            <h2 className='mb-2 text-base text-neutral-800 dark:text-neutral-200 sm:text-lg xl:text-xl'>
+            <h2 className='mb-2 text-2xl text-neutral-800 dark:text-neutral-200 sm:text-lg xl:text-xl'>
               {company}
             </h2>
             <h1 className='relative mb-4 text-3xl font-black leading-tight text-neutral-900 dark:text-neutral-100 sm:text-5xl xl:mb-8'>
@@ -89,13 +90,17 @@ const PerformanceInfo = ({ title, date, location, company, supportInfo, accountN
             <p className='mb-8 text-base text-neutral-800 dark:text-neutral-200 sm:text-lg xl:text-xl'>
               {location}
             </p>
-            <button
+            <div
               onClick={handleCopyClick}
-              className='flex items-center px-8 py-4 text-base font-medium text-neutral-800 dark:text-neutral-200 transition-colors duration-200 hover:text-neutral-900 dark:hover:text-white'
+              className='group flex flex-wrap items-center justify-center gap-2 px-4 py-4 text-base font-medium text-neutral-800 dark:text-neutral-200 transition-colors duration-200 hover:text-neutral-900 dark:hover:text-white sm:px-8'
             >
-              <span className='underline'>{supportInfo}</span>
+              <span className='underline whitespace-normal break-words'>
+                79420983227 카카오뱅크
+                <span className='whitespace-nowrap'> / </span>
+                예금주: 이*태
+              </span>
               <svg
-                className='w-5 h-5 ml-2'
+                className='w-5 h-5'
                 fill='none'
                 stroke='currentColor'
                 viewBox='0 0 24 24'
@@ -108,7 +113,7 @@ const PerformanceInfo = ({ title, date, location, company, supportInfo, accountN
                   d='M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2'
                 />
               </svg>
-            </button>
+            </div>
           </div>
         </div>
       </div>

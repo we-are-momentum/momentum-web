@@ -8,6 +8,7 @@ import { useSelector } from 'react-redux'
 import { RootState } from '@/store'
 import PerformanceImportant from '@/components/PerformanceImportant'
 import PerformanceSnaps from '@/components/PerformanceSnaps'
+import PerformanceNavigation from '@/components/PerformanceNavigation'
 
 const PerformanceDetail = () => {
   const { id } = useParams()
@@ -39,8 +40,11 @@ const PerformanceDetail = () => {
         <div className='absolute inset-0 bg-gradient-to-b from-transparent via-white/70 to-white dark:via-neutral-900/70 dark:to-neutral-900' />
       </div>
 
+      {/* 네비게이션 */}
+      <PerformanceNavigation />
+
       {/* 컨텐츠 */}
-      <div className='relative z-10'>
+      <div className='relative z-10 ease-in-out transition-all duration-300'>
         <PerformanceInfo
           title={performance.title}
           date={performance.date}
@@ -52,9 +56,15 @@ const PerformanceDetail = () => {
 
         <div className='bg-white dark:bg-neutral-900 backdrop-blur-sm'>
           <div className='max-w-6xl mx-auto px-4'>
-            <PerformanceSynopsis synopsis={performance.synopsis} />
-            <PerformanceSchedule schedule={performance.schedule} />
-            <PerformanceSnaps snaps={performance.snapshots} />
+            <div id='synopsis'>
+              <PerformanceSynopsis synopsis={performance.synopsis} />
+            </div>
+            <div id='schedule'>
+              <PerformanceSchedule schedule={performance.schedule} />
+            </div>
+            <div id='snapshots'>
+              <PerformanceSnaps snaps={performance.snapshots} />
+            </div>
             <PerformanceImportant />
             <PerformanceStaffs staffs={performance.staffs} />
           </div>
