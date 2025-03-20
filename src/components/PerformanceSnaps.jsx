@@ -10,7 +10,7 @@ const PerformanceSnaps = ({ snaps }) => {
             <img src={snap.image} alt={snap.title} className='w-full h-48 object-cover' />
             <div className='p-4'>
               <h3 className='text-lg font-bold'>{snap.title}</h3>
-              <p className='text-gray-600'>{snap.description}</p>
+              <p className='text-neutral-600'>{snap.description}</p>
             </div>
           </div>
         ))}

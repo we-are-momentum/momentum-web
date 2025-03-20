@@ -1,7 +1,7 @@
 import ResponsiveLayout from '@/layouts/ResponsiveLayout'
 
 const MobileView = () => (
-  <div className='flex flex-col min-h-screen bg-gray-50'>
+  <div className='flex flex-col min-h-screen bg-neutral-50'>
     <main className='flex flex-col items-center gap-4 p-4 mt-14'>
       <section className='w-full bg-blue-500 text-white p-6 rounded-lg shadow-lg'>
         <h2 className='text-xl font-bold'>모바일 최적화 화면</h2>

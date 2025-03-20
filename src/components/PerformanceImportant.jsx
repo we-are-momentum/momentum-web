@@ -10,15 +10,15 @@ const PerformanceImportant = () => {
       </h2>
       <div className='bg-yellow-100 border-l-4 border-yellow-500 text-yellow-700 p-4' role='alert'>
         <div className='overflow-x-auto text-center'>
-          <table className='min-w-full divide-y divide-gray-200'>
-            <tbody className='bg-white divide-y divide-gray-200'>
+          <table className='min-w-full divide-y divide-neutral-200'>
+            <tbody className='bg-white divide-y divide-neutral-200'>
               <tr>
-                <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-700'>
+                <td className='px-6 py-4 whitespace-nowrap text-sm text-neutral-700'>
                   커튼콜을 제외한 모든 촬영은 불가합니다.
                 </td>
               </tr>
               <tr>
-                <td className='px-6 py-4 whitespace-nowrap text-sm text-gray-700'>
+                <td className='px-6 py-4 whitespace-nowrap text-sm text-neutral-700'>
                   커튼콜 촬영은 가능하지만, SNS 및 온라인 업로드는 불가합니다.
                 </td>
               </tr>

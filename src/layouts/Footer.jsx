@@ -4,9 +4,9 @@ import { Typography } from '@mui/material'
 
 const Footer = () => {
   return (
-    <footer className='mt-6 flex justify-center space-x-4'>
+    <footer className='flex justify-center space-x-4'>
       <Typography>후원 계좌</Typography>
-      <Typography variant='body2' className='text-gray-600'>
+      <Typography variant='body2' className='text-neutral-600'>
         79420983227 카카오뱅크 / 예금주: 이*태
       </Typography>
     </footer>

@@ -26,7 +26,7 @@ const performancesData = [
     id: 20250001,
     title: '보이지 않아도',
     company: '극단 모멘텀',
-    date: '2025-04-19 ~ 2025-04-20',
+    date: '2025-04-18 ~ 2025-04-20',
     location: '구로 예술나무 씨어터',
     image: `${basename}/logo_dark.png`,
     supportInfo: '79420983227 카카오뱅크 / 예금주: 이*태',
@@ -34,23 +34,34 @@ const performancesData = [
     synopsis: '시놉시스 내용이 여기에 들어갑니다...',
     schedule: [
       {
+        date: '2025-04-18',
+        day: '금',
+        groups: [
+          {
+            round: '1',
+            time: '19:30',
+            actors: [...roka.teamB, ...kpa.teamB, ...goddess.teamB, specialGuest],
+          },
+        ],
+      },
+      {
         date: '2025-04-19',
         day: '토',
         groups: [
           {
-            round: '1',
-            time: '13:00',
-            actors: ['홍길동', '김길동', '김아영'],
-          },
-          {
             round: '2',
-            time: '16:00',
-            actors: ['홍길동', '김길동', '김아영'],
+            time: '13:00',
+            actors: [...roka.teamA, ...kpa.teamA, ...goddess.teamA, specialGuest],
           },
           {
             round: '3',
+            time: '16:00',
+            actors: [...roka.teamB, ...kpa.teamB, ...goddess.teamA, specialGuest],
+          },
+          {
+            round: '4',
             time: '19:00',
-            actors: ['홍길동', '김길동', '김아영'],
+            actors: [...roka.teamA, ...kpa.teamA, ...goddess.teamB, specialGuest],
           },
         ],
       },
@@ -59,19 +70,14 @@ const performancesData = [
         day: '일',
         groups: [
           {
-            round: '4',
-            time: '12:00',
-            actors: ['홍길동', '김길동', '김아영'],
-          },
-          {
             round: '5',
-            time: '15:00',
-            actors: ['홍길동', '김길동', '김아영'],
+            time: '14:00',
+            actors: [...roka.teamB, ...kpa.teamA, ...goddess.teamB, specialGuest],
           },
           {
             round: '6',
-            time: '18:00',
-            actors: ['홍길동', '김길동', '김아영'],
+            time: '17:00',
+            actors: [...roka.teamA, ...kpa.teamB, ...goddess.teamA, specialGuest],
           },
         ],
       },
@@ -109,14 +115,8 @@ const ResponsiveLayout = ({ children }) => {
     <div className='relative min-h-screen w-full overflow-x-hidden'>
       {/* 공통 AppBar */}
       <ResponsiveAppBar />
-      <div className='pt-16'>
-        {' '}
-        {/* AppBar 높이만큼 상단 패딩 추가 */}
-        <div className='relative items-center justify-center w-full overflow-x-hidden lg:pt-40 lg:pb-40 xl:pt-40 xl:pb-64'>
-          <div className='container flex flex-col items-center justify-between h-full max-w-6xl px-8 mx-auto lg:flex-row xl:px-0'>
-            {children}
-          </div>
-        </div>
+      <div className='w-full flex flex-col items-center'>
+        <div className='w-full xl:px-0'>{children}</div>
       </div>
       {/* 공통 Footer */}
       <Footer />

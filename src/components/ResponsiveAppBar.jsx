@@ -1,7 +1,8 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 function ResponsiveAppBar() {
+  const [isAtTop, setIsAtTop] = useState(true)
   const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
   const location = window.location
   const basename = location.pathname.startsWith('/momentum-web') ? '/momentum-web' : ''
@@ -9,11 +10,22 @@ function ResponsiveAppBar() {
   const darkLogoSrc = `${basename}/logo_dark.png`
   const lightLogoSrc = `${basename}/logo_light.png`
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY
+      setIsAtTop(scrollPosition === 0)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
   return (
     <header
-      className={
-        'fixed top-0 left-0 w-full z-50 bg-white dark:bg-gray-900 ring shadow-xl ring-gray-900/5 dark:ring-gray-100/75'
-      }
+      className={`
+        fixed top-0 left-0 w-full z-50 transition-colors duration-300
+        ${isAtTop ? 'bg-transparent' : 'bg-white/80 backdrop-blur-sm dark:bg-neutral-950/80'}
+      `}
     >
       <div className='container mx-auto px-4'>
         <div className='flex items-center justify-between h-16'>
