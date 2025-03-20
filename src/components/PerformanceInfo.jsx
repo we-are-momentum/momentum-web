@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-const PerformancePoster = ({ title, date, location, company, supportInfo, accountNumber }) => {
+const PerformanceInfo = ({ title, date, location, company, supportInfo, accountNumber }) => {
   const [showAlert, setShowAlert] = useState(false)
   const [alertMessage, setAlertMessage] = useState('')
   const [alertType, setAlertType] = useState('success')
@@ -140,4 +140,4 @@ const PerformancePoster = ({ title, date, location, company, supportInfo, accoun
   )
 }
 
-export default PerformancePoster
+export default PerformanceInfo

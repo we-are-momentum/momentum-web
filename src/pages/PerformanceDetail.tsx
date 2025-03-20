@@ -1,5 +1,5 @@
 import PerformanceStaffs from '@/components/PerformanceStaffs'
-import PerformancePoster from '@/components/PerformanceInfo'
+import PerformanceInfo from '@/components/PerformanceInfo'
 import PerformanceSchedule from '@/components/PerformanceSchedule'
 import PerformanceSynopsis from '@/components/PerformanceSynopsis'
 import { Container, Typography } from '@mui/material'
@@ -41,7 +41,7 @@ const PerformanceDetail = () => {
 
       {/* 컨텐츠 */}
       <div className='relative z-10'>
-        <PerformancePoster
+        <PerformanceInfo
           title={performance.title}
           date={performance.date}
           location={performance.location}

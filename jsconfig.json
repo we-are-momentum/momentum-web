@@ -15,7 +15,7 @@
     "src/**/*.jsx",
     "src/**/*.ts",
     "src/**/*.tsx",
-    "src/components/PerformancePoster.ㅅsx"
+    "src/components/PerformanceInfo.jsx"
   ],
   "exclude": ["node_modules", "**/node_modules", "dist"]
 }
