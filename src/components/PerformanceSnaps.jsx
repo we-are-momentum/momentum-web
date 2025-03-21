@@ -40,7 +40,7 @@ const PerformanceSnaps = ({ snaps }) => {
   return (
     <section className='mt-6 relative'>
       <h2 className='text-3xl font-bold mb-4 text-center text-neutral-800 dark:text-neutral-200'>
-        Snapshot
+        Snapshots
       </h2>
       <div className='relative flex items-center justify-center max-w-3xl mx-auto px-8'>
         {' '}
