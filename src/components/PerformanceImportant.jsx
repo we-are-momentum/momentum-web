@@ -7,27 +7,29 @@ const PerformanceImportant = () => {
   return (
     <section className='mt-6'>
       <h2 className='text-3xl font-bold mb-4 flex flex-col items-center text-center'>주의 사항</h2>
-      <ul className='text-left bg-white text-neutral-700 dark:bg-neutral-800 dark:text-neutral-200 p-4 rounded-lg'>
+      <ol className='text-left space-y-4 p-4'>
         {notices.map((notice, index) => (
           <li
             key={index}
-            className={`
-              px-4 py-3 
-              sm:text-md 
-              leading-relaxed
-              break-keep
-              whitespace-pre-wrap
-              ${
-                index !== notices.length - 1
-                  ? 'border-b border-neutral-300 dark:border-neutral-600'
-                  : ''
-              }
-            `}
+            className='
+              relative
+              p-4
+              bg-white dark:bg-neutral-800
+              rounded-lg
+              shadow-[0_2px_15px_-3px_rgba(99,102,241,0.1),0_4px_6px_-4px_rgba(99,102,241,0.05)]
+              dark:shadow-[0_2px_15px_-3px_rgba(99,102,241,0.05),0_4px_6px_-4px_rgba(99,102,241,0.02)]
+              flex
+              items-start
+              gap-3
+            '
           >
-            {notice}
+            <span className='text-indigo-500 dark:text-indigo-400 flex-shrink-0'>⚠️</span>
+            <span className='text-neutral-700 dark:text-neutral-200 sm:text-md leading-relaxed break-keep whitespace-pre-wrap'>
+              {notice}
+            </span>
           </li>
         ))}
-      </ul>
+      </ol>
     </section>
   )
 }

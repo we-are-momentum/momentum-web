@@ -11,7 +11,7 @@ const PerformanceNavigation = () => {
       setIsVisible(scrollPosition > posterHeight * 0.3)
 
       // 각 섹션의 위치를 확인하고 현재 활성 섹션 결정
-      const sections = ['main', 'synopsis', 'schedule', 'snapshots', 'important']
+      const sections = ['main', 'synopsis', 'casting', 'schedule', 'snapshots', 'important']
       const navHeight = 108 // AppBar + Navigation 높이
 
       for (const section of sections) {
@@ -60,8 +60,9 @@ const PerformanceNavigation = () => {
         <div className='flex items-center justify-center h-11 gap-8'>
           {[
             { id: 'synopsis', label: 'Synopsis' },
+            { id: 'casting', label: 'Casting' },
             { id: 'schedule', label: 'Schedule' },
-            { id: 'snapshots', label: 'Snapshot' },
+            { id: 'snapshots', label: 'Snapshots' },
           ].map(({ id, label }) => (
             <div
               key={id}

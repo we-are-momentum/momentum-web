@@ -71,95 +71,121 @@ const PerformanceSchedule = ({ schedule }) => {
   const specialGuest = '김하연'
 
   return (
-    <section className='mt-12 max-w-4xl mx-auto'>
-      <h2 className='text-2xl md:text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-8 text-center'>
-        Schedule
-      </h2>
+    <section className='relative pt-16 pb-16'>
+      {/* 상단 그라데이션 */}
+      <div className='absolute top-0 inset-x-0 h-16 bg-gradient-to-b from-white dark:from-neutral-900 to-indigo-50 dark:to-neutral-800' />
 
-      {/* 날짜 선택 탭 */}
-      <ul className='grid grid-cols-3 gap-2 mb-6 relative'>
-        <div
-          className='absolute bottom-0 h-0.5 bg-blue-600 dark:bg-blue-400 transition-all duration-300 ease-in-out'
-          style={{
-            left: `${(selectedDate ? schedule.findIndex((d) => d.date === selectedDate.date) : 0) * 33.333}%`,
-            width: '33.333%',
-          }}
-        />
-        {schedule.map((daySchedule) => (
-          <li
-            key={daySchedule.date}
-            onClick={() => handleDateClick(daySchedule)}
-            className={`
-              p-4 text-center transition-colors cursor-pointer list-none
-              ${
-                selectedDate?.date === daySchedule.date
-                  ? 'text-blue-600 dark:text-blue-400'
-                  : 'text-neutral-900 dark:text-neutral-100'
-              }
-              hover:bg-neutral-50 dark:hover:bg-neutral-800/50
-            `}
-          >
-            <div className='text-sm md:text-base font-medium'>{formatDate(daySchedule.date)}</div>
-            <div className='text-xs md:text-sm mt-1 text-neutral-600 dark:text-neutral-400'>
-              {daySchedule.day}요일
-            </div>
-          </li>
-        ))}
-      </ul>
+      {/* 컨텐츠 영역 */}
+      <div className='relative bg-indigo-50 dark:bg-neutral-800 py-8'>
+        <h2 className='text-2xl md:text-3xl font-bold text-neutral-900 dark:text-neutral-100 mb-8 text-center'>
+          Schedule
+        </h2>
 
-      {/* 회차 선택 */}
-      {selectedDate && (
-        <ul className='grid grid-cols-3 gap-2 mb-6 relative'>
-          <div
-            className='absolute bottom-0 h-0.5 bg-blue-600 dark:bg-blue-400 transition-all duration-300 ease-in-out'
-            style={{
-              left: `${(selectedGroup ? selectedDate.groups.findIndex((g) => g.round === selectedGroup.round) : 0) * 33.333}%`,
-              width: '33.333%',
-            }}
-          />
-          {selectedDate.groups.map((group) => (
-            <li
-              key={group.round}
-              onClick={() => handleGroupClick(group)}
-              className={`
-                p-3 text-center transition-colors cursor-pointer list-none
-                ${
-                  selectedGroup?.round === group.round
-                    ? 'text-blue-600 dark:text-blue-400'
-                    : 'text-neutral-900 dark:text-neutral-100'
-                }
-                hover:bg-neutral-50 dark:hover:bg-neutral-800/50
-              `}
-            >
-              <div className='text-sm md:text-base font-medium'>{group.round}회</div>
-              <div className='text-xs md:text-sm mt-1 text-neutral-600 dark:text-neutral-400'>
-                {group.time}
-              </div>
-            </li>
-          ))}
-        </ul>
-      )}
-
-      {/* 캐스팅 정보 */}
-      {selectedGroup && (
-        <div className='bg-white dark:bg-neutral-800 p-6 shadow-sm'>
-          <div className='flex flex-col space-y-6'>
-            {selectedGroup.actors.map((actor, index) => (
-              <div key={index} className='text-center'>
-                <span className='block text-lg font-bold text-neutral-900 dark:text-neutral-100'>
-                  {actor}
-                </span>
-                <hr className='border-t border-neutral-300 dark:border-neutral-600 mt-4' />
-              </div>
-            ))}
-            <div className='text-center'>
-              <span className='block text-sm md:text-base text-neutral-900 dark:text-neutral-100'>
-                목소리 출연 | {specialGuest}
-              </span>
-            </div>
+        {/* 날짜 선택 탭 */}
+        <div className='max-w-3xl mx-auto px-4'>
+          <div className='relative'>
+            <ul className='grid grid-cols-3 gap-4 mb-8'>
+              {schedule.map((daySchedule) => (
+                <li
+                  key={daySchedule.date}
+                  onClick={() => handleDateClick(daySchedule)}
+                  className={`
+                    p-4 text-center transition-colors cursor-pointer list-none
+                    ${
+                      selectedDate?.date === daySchedule.date
+                        ? 'text-blue-600 dark:text-blue-400'
+                        : 'text-neutral-900 dark:text-neutral-100'
+                    }
+                    hover:bg-neutral-50 dark:hover:bg-neutral-800/50
+                  `}
+                >
+                  <div className='text-sm md:text-base font-medium'>
+                    {formatDate(daySchedule.date)}
+                  </div>
+                  <div className='text-xs md:text-sm mt-1 text-neutral-600 dark:text-neutral-400'>
+                    {daySchedule.day}요일
+                  </div>
+                </li>
+              ))}
+            </ul>
+            <div
+              className='absolute bottom-0 h-0.5 bg-blue-600 dark:bg-blue-400 transition-all duration-300 ease-in-out'
+              style={{
+                left: `${(selectedDate ? schedule.findIndex((d) => d.date === selectedDate.date) : 0) * 33.333}%`,
+                width: '33.333%',
+              }}
+            />
           </div>
+
+          {/* 회차 선택 */}
+          {selectedDate && (
+            <div className='relative'>
+              <ul className='grid grid-cols-3 gap-4 mb-8'>
+                {selectedDate.groups.map((group) => (
+                  <li
+                    key={group.round}
+                    onClick={() => handleGroupClick(group)}
+                    className={`
+                      p-3 text-center transition-colors cursor-pointer list-none
+                      ${
+                        selectedGroup?.round === group.round
+                          ? 'text-blue-600 dark:text-blue-400'
+                          : 'text-neutral-900 dark:text-neutral-100'
+                      }
+                      hover:bg-neutral-50 dark:hover:bg-neutral-800/50
+                    `}
+                  >
+                    <div className='text-sm md:text-base font-medium'>{group.round}회</div>
+                    <div className='text-xs md:text-sm mt-1 text-neutral-600 dark:text-neutral-400'>
+                      {group.time}
+                    </div>
+                  </li>
+                ))}
+              </ul>
+              <div
+                className='absolute bottom-0 h-0.5 bg-blue-600 dark:bg-blue-400 transition-all duration-300 ease-in-out'
+                style={{
+                  left: `${(selectedGroup ? selectedDate.groups.findIndex((g) => g.round === selectedGroup.round) : 0) * 33.333}%`,
+                  width: '33.333%',
+                }}
+              />
+            </div>
+          )}
+
+          {/* 캐스팅 정보 */}
+          {selectedGroup && (
+            <div className='max-w-sm mx-auto bg-white dark:bg-neutral-800 p-8 shadow-xl shadow-blue-900/5 backdrop-blur-sm'>
+              {' '}
+              {/* p-6에서 p-8로 변경 */}
+              <div className='flex flex-col items-center space-y-4'>
+                {selectedGroup.actors.map((role, index) => (
+                  <div key={index} className='w-full text-center'>
+                    <span className='text-sm font-medium text-neutral-500 dark:text-neutral-400'>
+                      {role}
+                    </span>
+                    <p className='mt-1 text-base font-medium text-neutral-900 dark:text-neutral-100'>
+                      {selectedGroup.details[role]}
+                    </p>
+                    {index !== selectedGroup.actors.length - 1 && (
+                      <div className='mt-4 flex justify-center'>
+                        <div className='w-16 h-px bg-neutral-200 dark:bg-neutral-700' />
+                      </div>
+                    )}
+                  </div>
+                ))}
+                <div className='pt-4 text-center'>
+                  <span className='block text-sm text-neutral-600 dark:text-neutral-400'>
+                    목소리 출연 | {specialGuest}
+                  </span>
+                </div>
+              </div>
+            </div>
+          )}
         </div>
-      )}
+      </div>
+
+      {/* 하단 그라데이션 */}
+      <div className='absolute bottom-0 inset-x-0 h-16 bg-gradient-to-t from-white dark:from-neutral-900 to-indigo-50 dark:to-neutral-800' />
     </section>
   )
 }

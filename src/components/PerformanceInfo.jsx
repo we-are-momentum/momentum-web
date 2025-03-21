@@ -75,7 +75,7 @@ const PerformanceInfo = ({ title, date, location, company, supportInfo, accountN
       )}
 
       {/* Hero 섹션 */}
-      <div className='w-full flex items-center justify-center mb-32'>
+      <div className='w-full flex items-center justify-center mb-32 pb-16'>
         {' '}
         {/* mb-32에서 mb-24로 변경 */}
         <div className='container max-w-6xl px-8 mx-auto flex items-center justify-center'>
