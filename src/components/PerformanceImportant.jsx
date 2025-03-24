@@ -5,7 +5,7 @@ const PerformanceImportant = () => {
   ]
 
   return (
-    <section className='mt-6'>
+    <section className='mt-6 max-w-3xl mx-auto px-4'>
       <h2 className='text-3xl font-bold mb-4 flex flex-col items-center text-center'>주의 사항</h2>
       <ol className='text-left space-y-4 p-4'>
         {notices.map((notice, index) => (

@@ -24,7 +24,7 @@ const Footer = () => {
   return (
     <footer className='bg-neutral-100 dark:bg-neutral-950 backdrop-blur-sm py-8'>
       <div className='container mx-auto px-4'>
-        <div className='w-full max-w-6xl mx-auto'>
+        <div className='w-full max-w-3xl mx-auto'>
           {/* Momentum 로고 */}
           <div className='mb-8 text-left'>
             <h2 className='text-2xl font-bold text-neutral-900 dark:text-neutral-100'>momentum</h2>

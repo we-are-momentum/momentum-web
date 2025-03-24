@@ -34,7 +34,7 @@ const PerformanceInfo = ({ title, date, location, company, supportInfo, accountN
     navigator.clipboard
       .writeText(accountNumber)
       .then(() => {
-        setAlertMessage(`후원금 계좌가 복사되었습니다. ${accountNumber}`)
+        setAlertMessage(`계좌번호가 복사되었습니다. ${accountNumber}`)
         setAlertType('success')
         setShowAlert(true)
         setTimeout(() => setShowAlert(false), 3000)
@@ -94,29 +94,34 @@ const PerformanceInfo = ({ title, date, location, company, supportInfo, accountN
             </p>
             <div
               onClick={handleCopyClick}
-              className='group flex flex-wrap items-center justify-center gap-2 px-4 py-4 text-base font-medium text-neutral-800 dark:text-neutral-200 transition-colors duration-200 hover:text-neutral-900 dark:hover:text-white sm:px-8'
+              className='group flex flex-col items-center gap-2 px-4 py-4 text-base font-medium text-neutral-800 dark:text-neutral-200 transition-colors duration-200 hover:text-neutral-900 dark:hover:text-white sm:px-8'
             >
-              <span className='underline whitespace-normal break-words'>
-                79420983227 카카오뱅크
-                <span className='whitespace-nowrap'> / </span>
-                예금주: 이*태
-              </span>
-              <button>
-                <svg
-                  className='w-5 h-5'
-                  fill='none'
-                  stroke='currentColor'
-                  viewBox='0 0 24 24'
-                  xmlns='http://www.w3.org/2000/svg'
-                >
-                  <path
-                    strokeLinecap='round'
-                    strokeLinejoin='round'
-                    strokeWidth={2}
-                    d='M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2'
-                  />
-                </svg>
-              </button>
+              <h3 className='text-sm font-medium text-neutral-600 dark:text-neutral-400 mb-1'>
+                후원 계좌
+              </h3>
+              <div className='flex flex-col items-center'>
+                <span className='text-base text-center'>
+                  79420983227 카카오뱅크
+                  <span className='whitespace-nowrap'> / </span>
+                  예금주: 이*태
+                </span>
+                <button className='mt-3 p-2 rounded-full hover:bg-neutral-100 dark:hover:bg-neutral-800 transition-colors'>
+                  <svg
+                    className='w-5 h-5'
+                    fill='none'
+                    stroke='currentColor'
+                    viewBox='0 0 24 24'
+                    xmlns='http://www.w3.org/2000/svg'
+                  >
+                    <path
+                      strokeLinecap='round'
+                      strokeLinejoin='round'
+                      strokeWidth={2}
+                      d='M8 7v8a2 2 0 002 2h6M8 7V5a2 2 0 012-2h4.586a1 1 0 01.707.293l4.414 4.414a1 1 0 01.293.707V15a2 2 0 01-2 2h-2M8 7H6a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2v-2'
+                    />
+                  </svg>
+                </button>
+              </div>
             </div>
           </div>
         </div>
@@ -128,7 +133,7 @@ const PerformanceInfo = ({ title, date, location, company, supportInfo, accountN
         style={{ opacity }}
       >
         <div className='flex flex-col items-center text-neutral-400 dark:text-neutral-500'>
-          <span className='text-sm mb-2'>Scroll</span>
+          <span className='text-sm mb-2'>Scroll Down</span>
           <svg
             className='w-6 h-6'
             fill='none'
