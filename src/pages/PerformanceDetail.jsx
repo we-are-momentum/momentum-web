@@ -24,6 +24,13 @@ const PerformanceDetail = () => {
     }
     return null
   }
+  const a = '한영범'
+  const b = '류순호'
+  const c = '신석구'
+  const d = '이창섭'
+  const e = '조동현'
+  const f = '변주화'
+  const g = '여신'
 
   const performanceData = {
     id: '20250001',
@@ -31,7 +38,7 @@ const PerformanceDetail = () => {
     company: '극단 모멘텀',
     date: '2025-04-18 ~ 2025-04-20',
     location: stage,
-    image: `${basename}/logo_dark.png`,
+    image: `${basename}/poster.jpeg`,
     supportInfo: '79420983227 카카오뱅크 / 예금주: 이*태',
     accountNumber: '79420983227 카카오뱅크',
     casting: [
@@ -170,15 +177,80 @@ const PerformanceDetail = () => {
     ],
     snapshots: [
       {
-        image: `${basename}/logo.png`,
-        title: '샘플',
-        description: '샘플 이미지 설명',
+        image: '',
+        title: 'To be updated',
+        description: 'To be updated',
       },
-      {
-        image: `${basename}/logo_dark.png`,
-        title: '샘플2',
-        description: '샘플 이미지 설명',
-      },
+      // {
+      //   image: `${basename}/snap3.jpeg`,
+      //   title: a,
+      //   description: '김현수',
+      // },
+      // {
+      //   image: `${basename}/snap4.jpeg`,
+      //   title: a,
+      //   description: '신기은',
+      // },
+      // {
+      //   image: `${basename}/snap5.jpeg`,
+      //   title: b,
+      //   description: '박동효',
+      // },
+      // {
+      //   image: `${basename}/snap6.jpeg`,
+      //   title: b,
+      //   description: '임현준',
+      // },
+      // {
+      //   image: `${basename}/snap9.png`,
+      //   title: c,
+      //   description: '조명식',
+      // },
+      // {
+      //   image: `${basename}/snap10.jpeg`,
+      //   title: c,
+      //   description: '조강형',
+      // },
+      // {
+      //   image: `${basename}/snap7.jpeg`,
+      //   title: d,
+      //   description: '양희승',
+      // },
+      // {
+      //   image: `${basename}/snap8.jpeg`,
+      //   title: d,
+      //   description: '이경태',
+      // },
+      // {
+      //   image: `${basename}/snap11.jpeg`,
+      //   title: e,
+      //   description: '이원찬',
+      // },
+      // {
+      //   image: `${basename}/snap12.jpeg`,
+      //   title: e,
+      //   description: '김재혁',
+      // },
+      // {
+      //   image: `${basename}/snap13.jpeg`,
+      //   title: f,
+      //   description: '김민수',
+      // },
+      // {
+      //   image: `${basename}/snap14.jpeg`,
+      //   title: f,
+      //   description: '양정모',
+      // },
+      // {
+      //   image: `${basename}/snap2.jpeg`,
+      //   title: g,
+      //   description: '양초롱',
+      // },
+      // {
+      //   image: `${basename}/snap1.jpeg`,
+      //   title: g,
+      //   description: '황지수',
+      // },
     ],
     synopsis: synopsis,
   }
