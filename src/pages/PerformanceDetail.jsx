@@ -13,8 +13,7 @@ const PerformanceDetail = () => {
   const location = window.location
   const basename = location.pathname.startsWith('/momentum-web') ? '/momentum-web' : ''
   const stage = import.meta.env.VITE_LOCATION
-  // const synopsis = import.meta.env.VITE_SYNOPSIS
-  const synopsis = 'To be updated'
+  const synopsis = import.meta.env.VITE_SYNOPSIS
 
   // 배우 이름으로 역할을 찾는 헬퍼 함수
   const findRoleByActor = (actor, casting) => {
@@ -177,11 +176,6 @@ const PerformanceDetail = () => {
       },
     ],
     snapshots: [
-      // {
-      //   image: '',
-      //   title: 'To be updated',
-      //   description: 'To be updated',
-      // },
       {
         image: `${basename}/snap3.jpeg`,
         title: a,
